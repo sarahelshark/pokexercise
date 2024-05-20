@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="png" href="/Pokemon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--google font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <title>Pokexercise</title>
+  </head>
+  <body>
+
+    <h1>Pok&eacute;dex</h1>
+    <div class="container"> 
+      Carrellata di Pok&eacute;mon in arrivo...
+    </div>
+    
+
+    <!--/loader-->
+    <h3>Add a new Pok&eacute;mon !</h3>
+    <form id="addNewPokemon">
+      
+      <label for="name">Pokemon name -></label>
+      <input name="name" id="name" type="text">
+
+      <label for="url">Pokemon image url -></label>
+      <input id="url" name="url" type="text">
+
+      <button type="submit">Add</button>
+    </form>
+    <!--/main content-->
+
+    <div class="modal" id="successModal">
+      <div class="modal-content">
+          <p>Il tuo Pok&eacute;mon &egrave; stato aggiunto con successo al Pok&eacute;dex !</p>
+      </div>
+    </div>
+    <!--/success modal-->
+
+    <div class="modal-fail" id="failModal">
+      <div class="modal-content-fail">
+          <p>Ops! il tuo Pok&eacute;mon  non &egrave; stato aggiunto, riprova!</p>
+      </div>
+    </div>
+    <!--/fail modal-->
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>

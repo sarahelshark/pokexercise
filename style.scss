@@ -1,0 +1,152 @@
+@use "./style/colors";
+@use "./style/effects";
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+body {
+  background-color: colors.$poke-primary;
+  font-family: "Press Start 2P", cursive;
+  color: colors.$poke-light;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  margin: 40px 40px 20px 40px;
+  h1 {
+    color: colors.$poke-accent;
+    text-shadow: effects.$shadow-primary-txt;
+  }
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 40px 0%;
+  > div {
+    --shadowColor: 187 60% 40%;
+    background: colors.$poke-light;
+    width: calc(100% / 6);
+    margin-bottom: 50px;
+    box-shadow: effects.$shadow-primary;
+    border-radius: 1rem;
+    border: 0.5rem colors.$poke-black solid;
+    color: colors.$poke-text;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  div:hover {
+    color: colors.$poke-accent;
+    box-shadow: effects.$shadow-secondary;
+    transform: scale(1.1);
+  }
+  div img {
+    width: 100px;
+    height: 100px;
+  }
+  div:hover img {
+    transform: rotate(45deg);
+  }
+}
+
+/*media queries*/
+@media screen and (min-width: 375px) {
+  .container div {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 560px) {
+  .container div {
+    width: 95%;
+  }
+}
+@media screen and (min-width: 760px) {
+  .container div {
+    width: calc(80% / 2);
+  }
+}
+@media screen and (min-width: 811px) {
+  .container div {
+    width: calc(90% / 3);
+  }
+}
+@media screen and (min-width: 1200px) {
+  .container div {
+    width: calc(90% / 4);
+  }
+}
+@media screen and (min-width: 1300px) {
+  .container div {
+    width: calc(90% / 5);
+  }
+}
+
+/* scrollbar custom*/
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  box-shadow: inset effects.$shadow-primary;
+  border-radius: 30px;
+}
+::-webkit-scrollbar-thumb {
+  background: colors.$poke-accent;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: colors.$poke-text;
+}
+
+
+/* success & fail modal */
+.modal,
+.modal-fail {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: effects.$central-translate;
+  background-color: effects.$shadow-dark;
+  padding: 30px;
+  border-radius: 20px;
+  color: colors.$poke-light;
+  .modal-content,
+  .modal-content-fail {
+    text-align: center;
+  }
+}
+
+button {
+  color: colors.$poke-text;
+  padding: 0.5rem 0.7rem;
+  text-decoration: none;
+  background: colors.$poke-bg;
+  border-radius: 0.8rem;
+  font-family: "Press Start 2P", cursive;
+  border: colors.$poke-accent solid;
+  margin-top: 10px;
+}
+button:hover {
+  background: colors.$poke-accent;
+  border-color: colors.$poke-text;
+}
+
+h3:last-of-type {
+  color: colors.$poke-accent;
+}
+form {
+  border: dotted 0.5rem colors.$poke-accent;
+  color: colors.$poke-accent;
+  padding: 20px;
+  input {
+    border-radius: 20px;
+    border: none;
+  }
+  input:hover {
+    border: 8px double colors.$poke-text;
+  }
+}
